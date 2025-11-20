@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Plane, Car, MapPin, Coffee, Utensils, Bed, CheckCircle, AlertTriangle, Camera, Clock, ChevronRight, Users, Calendar, Megaphone, Smartphone } from 'lucide-react';
+import { Plane, Car, MapPin, Coffee, Utensils, Bed, CheckCircle, AlertTriangle, Camera, Clock, ChevronRight, Users, Calendar, Megaphone, Smartphone, Home } from 'lucide-react';
 
 const ItineraryApp = () => {
   const [activeTab, setActiveTab] = useState('day1');
 
-  const participants = ["Futa", "Iori", "Haruki"];
+  // メンバー
+  const participants = ["ふうた", "いおり", "はるき", "やす"];
 
   // スケジュールデータ
   const schedule = {
@@ -13,16 +14,16 @@ const ItineraryApp = () => {
       date: "11/22 (土)",
       title: "福岡上陸 & 大分へドライブ",
       color: "bg-blue-500",
-      // 夜の高速道路・ドライブのイメージ
-      image: "https://images.unsplash.com/photo-1605218458299-7032d571862f?auto=format&fit=crop&q=80&w=800&h=300", 
+      // プロジェクト内の画像に変更
+      image: "/image-1.jpg", 
       events: [
-        { time: "15:00", title: "中部国際空港(NGO) 第2ターミナル 集合", icon: <Users size={18} className="text-pink-500"/>, note: "余裕を持って集合！" },
+        { time: "14:00", title: "中部国際空港(NGO) 第2ターミナル 集合", icon: <Users size={18} className="text-pink-500"/>, note: "★超余裕を持って集合！ふうた・いおり・はるき（やすは大分で合流）" },
         { time: "16:00", title: "GK587 名古屋発", icon: <Plane size={18} className="text-blue-500"/>, note: "フライト時間: 1時間35分" },
         { time: "17:35", title: "福岡空港(FUK) 到着", icon: <MapPin size={18} className="text-green-500"/>, note: "預け荷物ピックアップ等" },
         { time: "18:00", title: "空港内で軽食調達", icon: <Coffee size={18} className="text-orange-500"/>, note: "レンタカー手続きまで少し時間あり" },
         { time: "19:00", title: "タイムズカー福岡空港店", icon: <Car size={18} className="text-indigo-500"/>, note: "★予約開始時間。手続き＆出発！ETCカード忘れずに" },
         { time: "19:30", title: "大分へ高速ドライブ", icon: <Car size={18} className="text-indigo-500"/>, note: "ルート：太宰府IC → 大分光吉IC (約2時間)" },
-        { time: "21:30", title: "ホテル到着・チェックイン", icon: <Bed size={18} className="text-purple-500"/>, note: "【宿泊地】大分大学周辺（旦野原エリア）" },
+        { time: "21:30", title: "やす君の家 到着", icon: <Home size={18} className="text-purple-500"/>, note: "【宿泊地】やす君の家（大分大学周辺）お世話になります！" },
       ]
     },
     day2: {
@@ -30,17 +31,17 @@ const ItineraryApp = () => {
       date: "11/23 (日)",
       title: "湯布院散策 & 黒川温泉あか牛丼",
       color: "bg-orange-500",
-      // 温泉情緒・和風の風景
-      image: "https://images.unsplash.com/photo-1568461369567-291045977722?auto=format&fit=crop&q=80&w=800&h=300", 
+      // プロジェクト内の画像に変更
+      image: "/image-2.jpg", 
       events: [
-        { time: "09:00", title: "ホテル出発", icon: <Car size={18} className="text-indigo-500"/>, note: "早めに出て湯布院へ" },
+        { time: "09:00", title: "やす君の家 出発", icon: <Car size={18} className="text-indigo-500"/>, note: "早めに出て湯布院へ" },
         { time: "10:00", title: "湯布院 散策", icon: <MapPin size={18} className="text-green-500"/>, note: "金鱗湖、湯の坪街道など。食べ歩き＆お土産下見" },
         { time: "12:00", title: "やまなみハイウェイ", icon: <Camera size={18} className="text-teal-500"/>, note: "絶景ドライブ！「長者原」で記念撮影" },
         { time: "13:15", title: "黒川温泉でランチ", icon: <Utensils size={18} className="text-red-500"/>, note: "★あか牛丼（わろく屋など）" },
         { time: "14:30", title: "黒川温泉 湯めぐり", icon: <Coffee size={18} className="text-orange-500"/>, note: "入湯手形を使って露天風呂へ" },
         { time: "16:30", title: "大分へ戻る", icon: <Car size={18} className="text-indigo-500"/>, note: "山道ドライブ (約1時間45分)" },
-        { time: "18:30", title: "大分大学周辺 到着", icon: <CheckCircle size={18} className="text-gray-500"/> },
-        { time: "19:00", title: "夕食（大分駅周辺など）", icon: <Utensils size={18} className="text-red-500"/>, note: "【宿泊地】大分大学周辺（連泊）" },
+        { time: "18:30", title: "やす君の家 到着", icon: <Home size={18} className="text-purple-500"/> },
+        { time: "19:00", title: "夕食（大分駅周辺など）", icon: <Utensils size={18} className="text-red-500"/>, note: "【宿泊地】やす君の家（連泊）" },
       ]
     },
     day3: {
@@ -48,14 +49,17 @@ const ItineraryApp = () => {
       date: "11/24 (月)",
       title: "関あじ関さば & 最後の博多夜",
       color: "bg-red-500",
-      // 魚料理（刺身など）のイメージ
-      image: "https://images.unsplash.com/photo-1549611081-30d0718610bb?auto=format&fit=crop&q=80&w=800&h=300", 
+      // プロジェクト内の画像に変更
+      image: "/image-3.jpg", 
       events: [
-        { time: "09:30", title: "チェックアウト・出発", icon: <Car size={18} className="text-indigo-500"/>, note: "忘れ物チェック！" },
+        { time: "09:30", title: "やす君の家 出発", icon: <Car size={18} className="text-indigo-500"/>, note: "忘れ物チェック！ありがとうございました！" },
         { time: "10:20", title: "関あじ関さば館 到着", icon: <Clock size={18} className="text-gray-500"/>, note: "★重要：開店(11:00)前の到着を目指す" },
         { time: "11:00", title: "豪華ランチ！", icon: <Utensils size={18} className="text-red-500"/>, note: "本場の関あじ・関さばを堪能" },
-        { time: "12:30", title: "福岡へ移動", icon: <Car size={18} className="text-indigo-500"/>, note: "ルート：大分宮河内IC → 太宰府方面 (渋滞注意)" },
-        { time: "15:30", title: "福岡エリア到着", icon: <MapPin size={18} className="text-green-500"/>, note: "時間があれば太宰府天満宮 or ららぽーと福岡" },
+        { time: "12:30", title: "大分駅へ移動", icon: <Car size={18} className="text-indigo-500"/>, note: "やす君を送る" },
+        { time: "13:15", title: "大分駅で解散", icon: <Users size={18} className="text-pink-500"/>, note: "やす君ありがとう！また遊ぼう👋" },
+        { time: "13:30", title: "福岡へ移動", icon: <Car size={18} className="text-indigo-500"/>, note: "ルート：大分IC → 博多駅周辺 (約2時間半)" },
+        { time: "16:00", title: "ポケモンセンターフクオカ", icon: <MapPin size={18} className="text-green-500"/>, note: "アミュプラザ博多8F。限定グッズをチェック！" },
+        { time: "18:00", title: "博多駅 出発", icon: <Car size={18} className="text-indigo-500"/>, note: "夕方の渋滞に注意して空港方面へ" },
         { time: "18:30", title: "給油 & 返却店舗へ", icon: <Car size={18} className="text-indigo-500"/>, note: "福岡空港近くのGSで満タンに" },
         { time: "19:00", title: "レンタカー返却", icon: <CheckCircle size={18} className="text-gray-500"/>, note: "★返却期限厳守" },
         { time: "19:30", title: "ホテルチェックイン", icon: <Bed size={18} className="text-purple-500"/>, note: "【宿泊地】福岡空港周辺ホテル" },
@@ -67,12 +71,12 @@ const ItineraryApp = () => {
       date: "11/25 (火)",
       title: "お土産購入 & 帰宅",
       color: "bg-green-500",
-      // 空港・お土産のイメージ
-      image: "https://images.unsplash.com/photo-1483450389192-3d3b4d2d005b?auto=format&fit=crop&q=80&w=800&h=300", 
+      // プロジェクト内の画像に変更
+      image: "/image-4.jpg", 
       events: [
-        { time: "09:30", title: "チェックアウト", icon: <CheckCircle size={18} className="text-gray-500"/>, note: "ゆっくりめの朝" },
-        { time: "10:00", title: "福岡空港でお土産", icon: <MapPin size={18} className="text-green-500"/>, note: "博多通りもん、明太子など" },
-        { time: "10:30", title: "保安検査通過", icon: <AlertTriangle size={18} className="text-yellow-500"/>, note: "Futa以外は荷物預けなし" },
+        { time: "08:00", title: "チェックアウト", icon: <CheckCircle size={18} className="text-gray-500"/>, note: "早めに出発して空港へ！" },
+        { time: "08:30", title: "福岡空港でお土産", icon: <MapPin size={18} className="text-green-500"/>, note: "★たっぷり2時間！博多通りもん、明太子など" },
+        { time: "10:30", title: "保安検査通過", icon: <AlertTriangle size={18} className="text-yellow-500"/>, note: "ふうた以外は荷物預けなし" },
         { time: "11:05", title: "GK582 福岡発", icon: <Plane size={18} className="text-blue-500"/>, note: "バイバイ九州！" },
         { time: "12:30", title: "名古屋(中部) 到着", icon: <MapPin size={18} className="text-green-500"/>, note: "お疲れ様でした！" },
       ]
@@ -129,7 +133,8 @@ const ItineraryApp = () => {
         <ul className="text-sm text-yellow-700 space-y-3 list-none pl-0">
           <li className="flex items-start">
             <Plane size={16} className="text-yellow-600 mr-2 mt-1 flex-shrink-0" />
-            <div className="leading-snug"><strong>Iori & Haruki:</strong> 帰りの荷物は機内持込(7kg)のみ！液体物注意だよ！✈️</div>
+            {/* やすさんは飛行機に乗らないため削除 */}
+            <div className="leading-snug"><strong>いおり & はるき:</strong> 帰りの荷物は機内持込(7kg)のみ！液体物注意だよ！✈️</div>
           </li>
           <li className="flex items-start">
             <Car size={16} className="text-yellow-600 mr-2 mt-1 flex-shrink-0" />
